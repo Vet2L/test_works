@@ -1,0 +1,7 @@
+CGR:
+1. use camera with OpenCV
+2. connect gallery to result
+3. make buttons bigger
+4. connect gallery drag to scrool(for touchscreen)
+...
+?. use QCamera from Qt 5.2

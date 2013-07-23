@@ -6,9 +6,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainLayout w;
     //for computer
-    //w.show();
+    w.show();
     //for android
-    w.showFullScreen();
+    //w.showFullScreen();
     
     return a.exec();
 }

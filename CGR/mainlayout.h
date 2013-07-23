@@ -4,9 +4,17 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QGridLayout>
 #include <QPushButton>
+#include <QToolButton>
 #include <QImage>
+#include <QTableWidget>
+#include <QHeaderView>
+#include <QScrollBar>
+#include <QTableWidgetItem>
 #include <QLabel>
+#include <QList>
+#include <QScrollArea>
 
 class MainLayout : public QWidget
 {
@@ -17,45 +25,47 @@ public:
     ~MainLayout();
 
 public slots:
-    void toHorizontalLayout();
-    void toVerticalLayout();
     void toCamera();
     void toGallery();
     void toResult();
+    void openFile();
+    void takeShoot();
 
 private:
     //functions:
     void createHorizontalLayout();
-    void createVerticalLayout();
     void initElements();
     void initCamera();
     void initGallery();
     void initResult();
-    void deleteCamera();
-    void deleteGallery();
-    void deleteResult();
+    void deleteCameraLayout();
+    void deleteGalleryLayout();
+    void deleteResultLayout();
     //horizontal layout:
     QHBoxLayout *mainHLayout;
     QVBoxLayout *leftVLayout;
     QVBoxLayout *rightVLayout;
-    //vertical layout:
-    QVBoxLayout *mainVLayout;
-    QHBoxLayout *bottomHLayout;
     //central
     QWidget *centralWidget;
     //functionality layouts:
     QVBoxLayout *cameraLayout;
-    QVBoxLayout *galleryLayout;
+    QGridLayout *galleryLayout;
     QVBoxLayout *resultLayout;
     //buttons:
     QPushButton *leftButton;
     QPushButton *rightButton;
+    QPushButton *actionButton;
     //camera layout:
     QLabel *cameraLabel;
     //gallery layout:
     QLabel *galleryLabel;
+    QTableWidget *galleryTable;
+    QList<QString> galleryList;
     //result layout:
+    QScrollArea *resultArea;
+    QLabel *resultImage;
     QLabel *resultLabel;
+    QString resultFile;
     //QImage *resultImage;
     enum state {CAMERA, GALLERY, RESULT};
     state status;
