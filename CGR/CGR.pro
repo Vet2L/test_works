@@ -10,12 +10,40 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = CGR
 TEMPLATE = app
+#LIBS += -lopencv_core -lopencv_highgui
+#DEPENDPATH += .
+#INCLUDEPATH += /usr/include/opencv
+ANDROID_OPENCV = ./android/#media/Software/android/OpenCV-2.4/
+LIBS += \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_contrib.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_legacy.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_ml.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_objdetect.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_calib3d.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_video.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_features2d.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_highgui.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_androidcamera.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_flann.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_imgproc.a \
+$$ANDROID_OPENCV/libs/armeabi-v7a/libopencv_core.a \
+$$ANDROID_OPENCV/share/OpenCV/3rdparty/libs/armeabi-v7a/liblibjpeg.a \
+$$ANDROID_OPENCV/share/OpenCV/3rdparty/libs/armeabi-v7a/liblibpng.a \
+$$ANDROID_OPENCV/share/OpenCV/3rdparty/libs/armeabi-v7a/liblibtiff.a \
+$$ANDROID_OPENCV/share/OpenCV/3rdparty/libs/armeabi-v7a/liblibjasper.a \
+$$ANDROID_OPENCV/share/OpenCV/3rdparty/libs/armeabi-v7a/libtbb.a \
+$$ANDROID_OPENCV/share/OpenCV/3rdparty/libs/armeabi-v7a/libIlmImf.a
 
+INCLUDEPATH += ./opencv/include/
+
+CONFIG+=link_pkgconfig PKGCONFIG+=opencv
 
 SOURCES += main.cpp\
-        mainlayout.cpp
+        mainlayout.cpp \
+        camerawidget.cpp
 
-HEADERS  += mainlayout.h
+HEADERS  += mainlayout.h \
+         camerawidget.h
 
 CONFIG += mobility
 MOBILITY = 

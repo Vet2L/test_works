@@ -3,6 +3,5 @@
         <file>images/left_arrow.png</file>
         <file>images/right_arrow.png</file>
         <file>images/camera.png</file>
-        <file>images/open_icon.png</file>
     </qresource>
 </RCC>

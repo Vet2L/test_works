@@ -1,7 +1,11 @@
 CGR:
-1. use camera with OpenCV
-2. connect gallery to result
-3. make buttons bigger
-4. connect gallery drag to scrool(for touchscreen)
+1. use camera with OpenCV - done
+2. make buttons bigger - done
+3. connect gallery drag to scrool(for touchscreen)
+   note: no drag signal, try to use follow:
+         1. onPressed - get cursor coords(start);
+         2. scrolldown on |Y at start -  coord on changed|;
+         3. maybe create slot and signal for 1 to 2;
+4. find bug in {gallery to result by onTableItemClick}
 ...
-?. use QCamera from Qt 5.2
+?. wait for Qt 5.2

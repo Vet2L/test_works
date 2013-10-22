@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home/vet2l/Code/test_work/CGR/android/src/org/kde/necessitas/ministro/IMinistroCallback.aidl
+ * Original file: /home/vet2l/Code/bitbucket/test_work/CGR/android/src/org/kde/necessitas/ministro/IMinistroCallback.aidl
  */
 package org.kde.necessitas.ministro;
 public interface IMinistroCallback extends android.os.IInterface
